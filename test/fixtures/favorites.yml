@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  madlib: one
+  user: one
+
+two:
+  madlib: two
+  user: two

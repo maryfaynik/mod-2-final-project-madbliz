@@ -1,7 +1,25 @@
-# README
+# MADLIBZ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## User Stories
+* A user can create an account
+* A user can create a random madlib
+* A logged in user can mark a madlib as a favorite
+* A logged in user can view their favorites
+* A logged in user can purchase a product
+    * Generate a trinket based on a favorite
+    * Add that trinket to their cart
+    * Check out
+    * Mark the order as purchased
+
+### Stretch User Stories
+* A user can see past orders
+* Review their trinkets
+* Choose madlib category
+* Work from a larger DB of madlib templates
+* Cart cookies / session
+
+
+
 
 Things you may want to cover:
 
