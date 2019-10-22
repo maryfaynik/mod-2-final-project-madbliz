@@ -1,0 +1,8 @@
+User Index page
+
+<h1>List of our users</h1>
+<ul>
+<% @users.each do |user| %>
+  <li><%= link_to user.to_name, user_path(user) %></li><br> <!-- We'll change this with styling -->
+<% end %>
+</ul>

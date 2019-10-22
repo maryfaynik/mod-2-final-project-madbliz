@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root to: 'application#splash'
+  #sessions
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
   
   resources :orders
   resources :madlibs

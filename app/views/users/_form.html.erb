@@ -1,0 +1,19 @@
+<%= form_for @user do |f| %>
+  <%# first name %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br>
+  <%# last name %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %><br>
+  <%# user name %>
+  <%= f.label "Select a unique username" %>
+  <%= f.text_field :user_name %><br>
+  <%# password %>
+  <%= f.label 'Enter your password' %>
+  <%= f.password_field :password %><br>
+  <%# confirm password %>
+  <%= f.label 'Confirm your password' %>
+  <%= f.password_field :password_confirmation %><br>
+  <%# submit %>
+  <%= f.submit %>
+<% end %>
