@@ -1,0 +1,21 @@
+User show page
+<h1>Welcome to <%= this_user? ? 'your' : "#{@user.to_name}'s" %> profile page, <%= current_user.first_name %>!</h1>
+<hr>
+
+<h4><%= this_user? ? "Your" : "#{@user.first_name}'s" %> favorites: </h4>
+<ul>
+<%# @favorites.each do |favorite| %>
+  <li><%# link_to favorite.name?, favorite_path(favorite) %></li>
+<%# end %>
+</ul>
+<h5>To-do for this page</h5>
+<ul>
+  <li> link_to user's favorite libs</li>
+  <li> come up with a coherent page style</li>
+</ul>
+
+
+
+<%= button_to "Logout", logout_path  unless !this_user? %><br>
+<%= button_to "Delete", {controller: :users, action: 'destroy', id: @user.id}, method: :delete unless !this_user?%><br>
+<%= link_to "Edit Profile", edit_user_path unless !this_user?%>
