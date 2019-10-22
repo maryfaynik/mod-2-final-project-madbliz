@@ -48,5 +48,7 @@ class MadlibsController < ApplicationController
         @madlib = Madlib.find(params[:id])
     end
 
+    def favorite
+    end
 
 end

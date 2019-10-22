@@ -1,1 +1,8 @@
-shows all favorites sorted by user
+<h1>Your Favorites!</h1>
+
+<ul>
+<% @favorites.each do |favorite|%>
+    <% madlib = Madlib.find(favorite.madlib_id)%>
+    <li> <%=link_to madlib.title, madlib_path(madlib) %></li>
+<%end%>
+</ul>

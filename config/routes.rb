@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :trinkets, shallow: true, only: [:index, :update]
   end
 
+  post '/favorites', to: 'favorites#create', as: 'new_favorite'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

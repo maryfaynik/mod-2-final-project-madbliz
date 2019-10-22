@@ -3,3 +3,5 @@
 <p>
 <%=@madlib.body%>
 </p>
+
+<%= button_to "Add To Your Favorites", new_favorite_path, params: { id: @madlib.id }%>
