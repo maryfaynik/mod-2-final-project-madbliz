@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
             session[:current_fave] = Madlib.find(params[:id].to_i)
 
             #sets return_to to where I am (this specfic madlib)
-            session[:return_to] ||= request.referer
+            session[:redirect_to] ||= request.referer
             redirect_to login_path
 
         #If logged in, create and add this to your favorites

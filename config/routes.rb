@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   resources :orders
   resources :madlibs
   resources :users do
-    resources :favorites, shallow: true, only: [:index, :destroy]
+    resources :favorites, shallow: true, only: [:index]
     resources :trinkets, shallow: true, only: [:index, :update]
   end
 
   post '/favorites', to: 'favorites#create', as: 'new_favorite'
+  delete '/favorite/:id', to: 'favorites#destroy', as: 'delete_favorite'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -1,9 +1,9 @@
 # MADLIBZ
 
 ## User Stories
-* A user can create an account
-* A user can create a random madlib
-* A logged in user can mark a madlib as a favorite
+* A user can create an account ✅
+* A user can create a random madlib ✅
+* A logged in user can mark a madlib as a favorite 
 * A logged in user can view their favorites
 -----------------------------------------------
 * A logged in user can purchase a product

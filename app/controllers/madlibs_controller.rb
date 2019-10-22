@@ -46,6 +46,11 @@ class MadlibsController < ApplicationController
 
     def show
         @madlib = Madlib.find(params[:id])
+
+        if current_user
+            @is_favorite = Favorite.find_by(madlib_id: @madlib.id, user_id: current_user)
+        end
+    
     end
 
     def favorite
