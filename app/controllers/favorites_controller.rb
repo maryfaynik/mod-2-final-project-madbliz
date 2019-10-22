@@ -22,4 +22,9 @@ class FavoritesController < ApplicationController
         @favorites = current_user.favorites
 
     end
+
+    def destroy
+        Favorite.destroy(params[:id])
+        redirect_to user_path(current_user)
+    end
 end

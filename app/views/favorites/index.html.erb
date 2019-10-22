@@ -3,6 +3,8 @@
 <ul>
 <% @favorites.each do |favorite|%>
     <% madlib = Madlib.find(favorite.madlib_id)%>
-    <li> <%=link_to madlib.title, madlib_path(madlib) %></li>
+    <li> <%=link_to madlib.title, madlib_path(madlib) %> 
+        <%= button_to "Un-Favorite", delete_favorite_path(favorite), method: :delete, params: {id: favorite.madlib_id } %>
+    </li>
 <%end%>
 </ul>

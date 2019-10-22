@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
   
-  resources :orders
+  resources :orders, only: [:create, :show, :index]
   resources :madlibs
   resources :users do
     resources :favorites, shallow: true, only: [:index]
