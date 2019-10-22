@@ -3,7 +3,7 @@ class CreateMadlibs < ActiveRecord::Migration[6.0]
     create_table :madlibs do |t|
       t.string :title
       t.text :body
-      t.string :catgegory
+      t.string :catgegory, default: nil
 
       t.timestamps
     end
