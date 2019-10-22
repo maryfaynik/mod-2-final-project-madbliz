@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   
     def require_logged_in
         unless logged_in?
+            flash[:errors] ||= []
+            flash[:errors] << "Must be signed in to view this content"
+            # byebug
             session[:redirect_to] ||= request.referer
             redirect_to login_path
         end
