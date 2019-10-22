@@ -3,6 +3,14 @@ class Madlib < ApplicationRecord
     has_many :favorites
     has_many :users, through: :favorites
 
+    def sentences=(sent)
+        @stentences = sent
+    end
+
+    def sentences
+        @senteces
+    end
+
     def self.all_categories 
         ["Animals", "Sports", "Action", "Adventure", "Business", "Biography", "Comedy",
     "Technology", "Crime", "Food", "Mystery", "Holiday", "Romance"]
