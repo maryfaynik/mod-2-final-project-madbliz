@@ -10,6 +10,18 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    def show
+        #This is all the user's favorited madlibs (through favorites)
+        @madlibs= @user.madlibs
+
+        #these are all of the user's trinket_orders with placed status
+        @trinket_orders = @user.trinket_orders.select {|t_order| Order.find(t_order.order_id).placed == true}
+        
+        #these are the orders associated with placed trinket orders 
+        @orders = @trinket_orders.map {|t_o| Order.find(t_o.order_id)}.uniq
+
+    end
+
     def create
         @user = User.new(user_params)
         if @user.valid?

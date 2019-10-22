@@ -4,7 +4,7 @@
 <%=@madlib.body%>
 </p>
 
-<%unless is_favorite %>
+<%unless @is_favorite %>
     <%= button_to "Add To Your Favorites", new_favorite_path, params: { id: @madlib.id }%>
 <%else %>
     <%= button_to "Remove From Favorites", delete_favorite_path, params: { id: @madlib.id }%>

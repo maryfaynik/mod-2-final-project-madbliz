@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_144014) do
 
   create_table "blanks", force: :cascade do |t|
     t.string "speech_part"
-    t.integer "madlib_id"
+    t.integer "madlib_id", null: false
     t.string "input", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_144014) do
   end
 
   create_table "trinkets", force: :cascade do |t|
-    t.integer "favorite_id", null: false
+    t.integer "favorite_id"
     t.float "price", default: 10.0
     t.string "product_type"
     t.datetime "created_at", precision: 6, null: false

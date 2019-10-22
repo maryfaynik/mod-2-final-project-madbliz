@@ -3,16 +3,34 @@ User show page
 <hr>
 
 <h4><%= this_user? ? "Your" : "#{@user.first_name}'s" %> favorites: </h4>
-<ul>
-<%# @favorites.each do |favorite| %>
-  <li><%# link_to favorite.name?, favorite_path(favorite) %></li>
-<%# end %>
-</ul>
-<h5>To-do for this page</h5>
-<ul>
-  <li> link_to user's favorite libs</li>
-  <li> come up with a coherent page style</li>
-</ul>
+<% if @madlibs.empty? %>
+  <h5>No favorites yet! Get to work! </h5>
+<% else%>
+  <ul>
+  <% @madlibs.each do |madlib| %>
+    <li><%= link_to madlib.title, madlib_path(madlib) %></li>
+  <% end %>
+  </ul>
+<%end%>
+
+
+<h4><%= this_user? ? "Your" : "#{@user.first_name}'s" %> past orders: </h4>
+<%if @orders.empty? %>
+  <h5>No orders yet! Buy some stuff! </h5>
+<% else%>
+  <ol>
+  <% #@trinket_orders.each_with_index do |t_o, index| %>
+  <% @orders.each do |order| %>
+    <li><%= link_to order.created_at.strftime("Ordered on %m/%d/%Y") , order_path(order) %></li>
+      <ul>
+        <% order.trinkets.each do |trinket| %>
+        
+          <li><%= trinket.product_type%> with <%= trinket.madlib.title%> </li>
+        <%end%>
+      </ul>
+  <% end %>
+  </ol>
+<%end%>
 
 
 
