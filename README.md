@@ -22,6 +22,9 @@
 * User can create a madlib?
 
 
+Madlib Gem: https://github.com/SamSamskies/madlibber
+https://github.com/halliedunham/mad-libs
+
 
 
 
