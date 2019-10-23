@@ -32,6 +32,6 @@ class ApplicationController < ActionController::Base
     
 
     def splash
-        logged_in? ? (redirect_to user_path(current_user.id)) : (redirect_to login_path)
+        #logged_in? ? (redirect_to user_path(current_user.id)) : (redirect_to login_path)
     end
 end
