@@ -12,7 +12,6 @@ class FavoritesController < ApplicationController
         #If logged in, create and add this to your favorites
         else
             Favorite.find_or_create_by(madlib_id: params[:id].to_i, user_id: current_user.id)
-
             redirect_to user_favorites_path(current_user)
         end
 
