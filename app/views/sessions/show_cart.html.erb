@@ -1,0 +1,13 @@
+<h1> 🛒 Your Cart 🛒 </h1>
+
+<% if @empty%>
+    <h3>Your Cart is Empty. Get shopping!</h3>
+<%else%>
+    <ul>
+    <% @trinkets.each do |trinket|%>
+        <li> <%=trinket.prod_and_price %></li>
+    <%end%>
+    </ul>
+
+    <%= button_to "Place Order", orders_path, params: {trinket_ids: @trinket_ids}%>
+<%end%>

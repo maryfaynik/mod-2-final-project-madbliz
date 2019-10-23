@@ -1,0 +1,12 @@
+<h1>View Your Order:</h1>
+
+<h3>Placed: <%= @order.created_at.strftime("%m/%d/%y") %></h3>
+<h3>Items:</h3>
+<ul>
+    <% @trinkets.each do |trinket|%>
+        <li><strong> <%=trinket.product_type%> </strong></li>
+        <p>Price: $<%=trinket.price %></p>
+        <p>Madlib: <%=trinket.madlib.title%> </p>
+        
+    <%end%>
+</ul>

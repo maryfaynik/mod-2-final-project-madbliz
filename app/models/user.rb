@@ -19,8 +19,10 @@ class User < ApplicationRecord
         unless user_name.present?
             errors.add(:user_name, "Please enter a username")
         else
-            unless User.all.find_by(user_name: user_name).nil?
-                errors.add(:user_name, "Username is not unique")
+            unless id.present?
+                unless User.all.find_by(user_name: user_name).nil?
+                    errors.add(:user_name, "Username is not unique")
+                end
             end
         end
     end

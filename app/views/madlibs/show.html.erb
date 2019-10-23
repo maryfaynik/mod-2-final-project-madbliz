@@ -8,5 +8,6 @@
     <%= button_to "Add To Your Favorites", new_favorite_path, params: { id: @madlib.id }%>
 <%else %>
     <%= button_to "Remove From Favorites", delete_favorite_path, params: { id: @madlib.id }%>
+    <%= button_to "Buy Something!", madlib_new_cart_path(@madlib.id), method: :get %>
 
 <%end %>

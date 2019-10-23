@@ -1,1 +1,10 @@
-shows all orders filtered by user
+<h1>Hi, <%= current_user.to_name %></h1>
+
+<h2>Here are all of your past Orders:</h2>
+<ul>
+<% @orders.each do |order|  %>
+    <li>Order Number <%=link_to order.number, order_path(order)%>  </li>
+   
+<%end%>
+</ul>
+

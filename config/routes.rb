@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
+  post '/products', to: 'sessions#add_to_cart'
+  get '/cart', to: 'sessions#show_cart', as: 'cart'
   
-  resources :orders, only: [:create, :show, :index]
-  resources :madlibs
+  resources :orders, only: [:new, :create, :show, :index]
+  resources :madlibs do
+    get '/products', to: 'sessions#products', as: 'new_cart'
+  end
   resources :users do
     resources :favorites, shallow: true, only: [:index]
     resources :trinkets, shallow: true, only: [:index, :update, :show]
