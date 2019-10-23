@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     get '/products', to: 'sessions#products', as: 'new_cart'
   end
   resources :users do
-    resources :favorites, shallow: true, only: [:index] 
-    resources :trinkets, shallow: true, only: [:index, :show]
+    resources :favorites, shallow: true, only: [:index]
+    resources :trinkets, shallow: true, only: [:index, :update, :show]
   end
 
   post '/favorites', to: 'favorites#create', as: 'new_favorite'

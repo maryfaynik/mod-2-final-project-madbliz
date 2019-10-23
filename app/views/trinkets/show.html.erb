@@ -1,0 +1,8 @@
+<%# Individual trinket show page %>
+<%# Displays image of type %>
+<%# Displayed madlib text over the image %>
+<%# Displays link to the orders associated with it %>
+<div class="img-wrapper">
+  <%= image_tag "#{@trinket_types[@trinket.product_type][:img_url]}", class: 'img', alt: "#{@trinket.product_type}" %>
+  <span><%= @madlib.body %></span>
+</div>
