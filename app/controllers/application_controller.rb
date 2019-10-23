@@ -22,7 +22,8 @@ class ApplicationController < ActionController::Base
             flash[:errors] ||= []
             flash[:errors] << "Must be signed in to view this content"
             # byebug
-            session[:redirect_to] ||= request.referer
+            # depending on which path this is accessed from, it works as intended.
+            session[:redirect_to] ||= request.original_fullpath
             redirect_to login_path
         end
     end
