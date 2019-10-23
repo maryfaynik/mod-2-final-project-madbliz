@@ -1,0 +1,16 @@
+
+<h2>Madlib: <%= @madlib.title %></h2>
+<p> <%= @madlib.body%> </p>
+<br>
+<%= form_tag '/products', method: :post do %>
+    <%= label_tag "Select Products" %>
+    <br>
+    <% @trinkets.each do |trinket|%>
+    <%#= collection_check_boxes :trinket_ids, @trinkets, :id, :prod_and_price do |b|  %>
+        <%#=  b.label %> <%#= b.check_box  %>
+        <%= check_box_tag "trinket_ids[]", trinket.id %>
+        <%= label_tag trinket.prod_and_price%>
+        <br>
+    <%end%>
+    <%= submit_tag "Add to Cart" %>
+<%end%>
