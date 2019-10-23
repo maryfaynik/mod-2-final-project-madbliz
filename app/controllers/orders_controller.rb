@@ -6,17 +6,6 @@ class OrdersController < ApplicationController
         @orders = current_user.orders.reverse
         
     end
-    
-    # def new
-    #     #Can't come to this page by typing directly
-    #     return redirect_to user_path(current_user) unless params[:favorite_id]
-        
-    #     @favorite = Favorite.find(params[:favorite_id])
-    #     @madlib = @favorite.madlib
-    #     @trinkets = build_trinkets(@favorite)
-    #     @order = Order.new
-        
-    # end
 
     def create
     

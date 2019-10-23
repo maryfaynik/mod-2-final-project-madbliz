@@ -34,10 +34,12 @@
     <%= button_to "See All Orders", orders_path, method: :get%>
 
   <%end%>
+  <br>
+  <%= button_to "Close Account", {controller: :users, action: 'destroy', id: @user.id}, method: :delete unless !this_user?%><br>
+  <%= button_to "Edit Profile", edit_user_path, method: :get %>
 <%end%>
 
 <br><br>
 
-<%= button_to "Logout", logout_path  unless !this_user? %><br>
-<%= button_to "Close Account", {controller: :users, action: 'destroy', id: @user.id}, method: :delete unless !this_user?%><br>
-<%= link_to "Edit Profile", edit_user_path unless !this_user?%>
+
+

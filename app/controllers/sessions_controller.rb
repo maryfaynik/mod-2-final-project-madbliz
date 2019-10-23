@@ -2,9 +2,11 @@ class SessionsController < ApplicationController
 
   def new
     #renders login form
+    return redirect_to root_path if logged_in?
   end
 
   def create
+  
     @user = User.find_by(user_name: params[:user][:username]) || User.new(password_digest: (BCrypt::Password.create('')))
       flash[:errors] ||= []
       if !@user.authenticate(params[:user][:password]) # Incorrect password case
