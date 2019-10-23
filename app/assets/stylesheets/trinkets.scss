@@ -1,3 +1,26 @@
 // Place all the styles related to the Trinkets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.img-thumbnail {
+  width: 200px;
+}
+/* flex container for trinkets */
+.img-wrapper {
+  height: 50%;
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* All flex items */
+.img-wrapper > * {
+  flex: 1 1 100%
+}
+/* Text container */
+.img-wrapper span {
+  display: block;
+  position: absolute;
+  max-width: 50%;
+  text-align: justfy;
+}

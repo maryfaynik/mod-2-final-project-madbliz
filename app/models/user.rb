@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :madlibs, through: :favorites
     has_many :orders
     has_many :trinket_orders, through: :orders
+    has_many :trinkets, through: :favorites
     has_secure_password
     #creates password and password_confirmation
     validate :uniqueness_of_un

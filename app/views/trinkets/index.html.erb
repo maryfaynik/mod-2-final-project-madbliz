@@ -1,1 +1,10 @@
 shows all trinkets sorted by user
+
+<%# All of the trinkets created* by the user %>
+<% @trinkets.each do |trinket| %>
+  <%= link_to trinket_path(trinket) do %>
+    <%= image_tag "#{@trinket_types[trinket.product_type][:img_url]}", class: 'img-thumbnail', alt: "#{trinket.product_type}" %>
+  <% end %>
+<% end %>
+<%# List out the trinkets %>
+<%# Thumbnail - Link to the trinket show page %>
