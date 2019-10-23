@@ -1,0 +1,14 @@
+
+<h2>Madlib: <%= @madlib.title %></h2>
+<p> <%= @madlib.body%> </p>
+<br>
+<%= form_for @order do |f|%>
+    <%= hidden_field_tag :favorite_id, @favorite.id %>
+    <%= f.label "Select Products" %>
+    <br>
+    <%= f.collection_check_boxes :trinket_ids, @trinkets, :id, :prod_and_price do |b|  %>
+        <%=  b.label %> <%= b.check_box  %>
+        <br>
+    <%end%>
+    <%= f.submit "Place Order" %>
+<%end%>

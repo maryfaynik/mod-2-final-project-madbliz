@@ -22,8 +22,52 @@ class SessionsController < ApplicationController
       end
   end
 
+  def products
+    
+    @madlib = Madlib.find(params[:madlib_id])
+    favorite = Favorite.find_by(user: current_user, madlib: @madlib)
+    @trinkets = build_trinkets(favorite)
+    
+    
+  end
+
+  def add_to_cart
+    trinket_ids = params[:trinket_ids]
+  
+    session[:cart] ||= []
+    trinket_ids.each do |trinket_id|
+      session[:cart] << trinket_id
+    end
+
+    redirect_to show_cart_path
+  end
+
+  def show_cart
+    @trinket_ids = session[:cart] 
+
+    if !@trinket_ids 
+      @empty = true
+    else 
+      @trinkets = @trinket_ids.map {|id| Trinket.find(id)}
+
+    end
+    
+  end
+
   def destroy
       session.delete :user_id
       redirect_to root_path
   end
+
+
+  private
+
+  def build_trinkets(fave)
+    trinkets = []
+    Trinket::PRODUCTS.each do |product, product_attr|
+        trinkets << Trinket.create(product_type: product, favorite: fave, price: product_attr[:price] )
+    end
+    trinkets
+  end
+
 end

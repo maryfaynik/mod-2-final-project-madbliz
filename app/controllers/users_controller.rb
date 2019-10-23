@@ -15,10 +15,12 @@ class UsersController < ApplicationController
         @madlibs= @user.madlibs
 
         #these are all of the user's trinket_orders with placed status
-        @trinket_orders = @user.trinket_orders.select {|t_order| Order.find(t_order.order_id).placed == true}
+        #@trinket_orders = @user.trinket_orders.select {|t_order| Order.find(t_order.order_id).placed == true}
         
+        @orders = @user.orders.select {|order| order.placed == true}.last(3).reverse
+    
         #these are the orders associated with placed trinket orders 
-        @orders = @trinket_orders.map {|t_o| Order.find(t_o.order_id)}.uniq
+       # @orders = @trinket_orders.map {|t_o| Order.find(t_o.order_id)}.uniq
 
     end
 
@@ -38,6 +40,7 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             redirect_to user_path(@user)
         else
+           
             flash[:errors] = @user.errors.full_messages
             redirect_to edit_user_path(@user)
         end
