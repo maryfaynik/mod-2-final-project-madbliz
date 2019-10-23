@@ -18,11 +18,9 @@
       </nav>
       <div class="errors">
         <% if flash[:errors] %>
-            <ol>
           <% flash[:errors].each do |error|%>
-              <li><%= error %></li>
+              <strong><%= error %></strong>
           <% end %>
-            </ol>
         <% end %>
       </div>
     </header>
