@@ -7,13 +7,12 @@
 * A logged in user can view their favorites ✅
 -----------------------------------------------
 * A logged in user can purchase a product
-    * Generate a trinket based on a favorite
-    * Add that trinket to their cart
-    * Check out
-    * Mark the order as purchased
-    * Display madlib on the product
-    * Cart cookies / session
-    * A user can see past orders 
+    * Generate a trinket based on a favorite ✅
+    * Add that trinket to their cart ✅
+    * Check out ✅
+    * Mark the order as purchased ✅
+    * Cart cookies / session ✅
+    * A user can see past orders  ✅
 
 ### Stretch User Stories
 
@@ -21,6 +20,7 @@
 * Choose madlib category
 * Work from a larger DB of madlib templates
 * User can create a madlib?
+* Display madlib on the product  
 
 
 Madlib Gem: https://github.com/SamSamskies/madlibber
