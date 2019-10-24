@@ -73,13 +73,12 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: $etongreen;
+    background-color: $powder;
     align-content: center;
- 
+    
     min-height: 100vh;
     
 }
-
 
 
 main>* {
@@ -87,19 +86,36 @@ main>* {
     width: 70%;
     background-color: white; 
     min-height: 100vh;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 15px;
+    text-align: center;
 }
 
 .login_form {
     border-color: black;
 };
 
+//HR TAGS
+hr.top {
+    border-top: 3px solid rgb(24, 22, 22);
+}
+
+hr.body {
+    color: 1px solid rgb(110, 110, 126);
+}
+
+
+//HEADERS
 
 h1 {
     font-family: 'Gloria Hallelujah', cursive;
+    text-align: center;
+    
 }
 
 h2 {
-    font-family: 'Reenie Beanie', cursive;
+     font-family: 'Reenie Beanie', cursive;
 }
 
 h3 {
@@ -113,11 +129,24 @@ h5 {
 }
 
 li {
-    font-family: 'Schoolbell', cursive; 
+    
 }
 
-button {
+//Buttons
+input[type = "submit"] {
+    
+    background-color: $etongreen;
+    border-radius: 4px;
+    border-color: powder;
+    color: rgb(31, 68, 70);
     font-family: 'Schoolbell', cursive;
+    
+}
+
+input[type = "submit"].hover {
+    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    
 }
 
 input {
@@ -129,7 +158,24 @@ label {
 
 a {
     font-family: 'Schoolbell', cursive;
+    color: $pearlaqua;
 }
+
+/* visited link */
+a:visited {
+    color: $pearlaqua;
+  }
+  
+  /* mouse over link */
+a:hover {
+    color: $iguana;
+}
+  
+  /* selected link */
+a:active {
+    color: $powder;
+}
+
 
 
 span {
@@ -138,4 +184,33 @@ span {
 
 p {
     font-family: 'Schoolbell', cursive;
+}
+
+
+table {
+    width: 50%;
+    font-family: 'Schoolbell', cursive;
+    margin: 0 auto; 
+}
+
+
+// tr {
+//     max-width:100%;
+//     white-space:nowrap;
+// }
+// td {
+//     max-width:100%;
+//     white-space:nowrap;
+// }
+
+td.mini {
+    width: 40%;
+    text-align: right;
+    padding-right: 5px;
+}
+
+td.maxi {
+    width: 60%;
+    text-align: left;
+    padding-left: 5px;
 }
