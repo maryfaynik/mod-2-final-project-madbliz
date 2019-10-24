@@ -14,6 +14,8 @@ class UsersController < ApplicationController
         #This is all the user's favorited madlibs (through favorites)
         @madlibs= @user.madlibs
 
+        @trinkets = @user.trinkets
+
         #these are all of the user's trinket_orders with placed status
         #@trinket_orders = @user.trinket_orders.select {|t_order| Order.find(t_order.order_id).placed == true}
         
@@ -54,7 +56,7 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :user_name, :password, :password_confirmation)
+        params.require(:user).permit(:first_name, :last_name, :user_names, :password, :password_confirmation)
     end
 
     def user_find

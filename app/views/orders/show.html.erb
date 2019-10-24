@@ -4,7 +4,7 @@
 <h3>Items:</h3>
 <ul>
     <% @trinkets.each do |trinket|%>
-        <li><strong> <%=trinket.product_type%> </strong></li>
+        <li><strong> <%=link_to trinket.product_type, trinket_path(trinket)%> </strong></li>
         <p>Price: $<%=trinket.price %></p>
         <p>Madlib: <%=trinket.madlib.title%> </p>
         

@@ -41,7 +41,7 @@ class SessionsController < ApplicationController
       session[:cart] << trinket_id
     end
 
-    redirect_to show_cart_path
+    redirect_to cart_path
   end
 
   def show_cart
@@ -58,6 +58,7 @@ class SessionsController < ApplicationController
 
   def destroy
       session.delete :user_id
+      current_user &&= nil
       redirect_to root_path
   end
 

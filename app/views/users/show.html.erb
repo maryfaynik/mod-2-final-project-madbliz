@@ -31,7 +31,8 @@
     <% end %>
     </ol>
 
-    <%= button_to "See All Orders", orders_path, method: :get%>
+    <%= button_to "See All Orders", orders_path, method: :get %>
+    <%= button_to "See All Trinkets", user_trinkets_path(@user), method: :get %>
 
   <%end%>
   <br>
