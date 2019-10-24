@@ -2,8 +2,10 @@
 <%# Displays image of type %>
 <%# Displayed madlib text over the image %>
 <%# Displays link to the orders associated with it %>
+ <h1>I like the cut of your lib -- Swag</h1>
+ <div>
 <figure class="img-wrapper figure">
   <%= image_tag "#{@trinket_types[@trinket.product_type][:img_url]}", class: "figure-img #{@trinket.product_type}", alt: "#{@trinket.product_type}" %>
   <span class='figure-caption'><%= @madlib.body %></span>
 </figure>
- <h1>I like the cut of your lib -- Swag</h1>
+</div>
