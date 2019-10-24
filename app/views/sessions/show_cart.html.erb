@@ -4,8 +4,9 @@
     <h3>Your Cart is Empty. Get shopping!</h3>
 <%else%>
     <ul>
-    <% @trinkets.each do |trinket|%>
-        <li> <%=trinket.prod_and_price %></li>
+    <% @trinkets.each_with_index do |trinket, index|%>
+        <li> <%=trinket.prod_and_price %></li> 
+        <p> "<%= @madlibs[index].title %>"</p>
     <%end%>
     </ul>
 

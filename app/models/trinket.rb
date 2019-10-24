@@ -5,7 +5,7 @@ class Trinket < ApplicationRecord
 
   has_many :orders, through: :trinket_orders
 
-  PRODUCTS = {"Mug" => {img_url: "mug.svg", price: 10.00}, "T-Shirt"=> {img_url: "tshirt.svg", price: 20.00}, "Book"=> {img_url: "book.svg", price: 20.00}, "Dish Towel"=> {img_url: "towel.svg", price: 5.99}, "Sticker"=> {img_url: "sticker.svg", price: 4.99}, "Magnet"=> {img_url: "magnet.svg", price: 6.99}}
+  PRODUCTS = {"Mug" => {img_url: "mug.svg", price: 10.00}, "T-Shirt"=> {img_url: "tshirt.svg", price: 20.00}, "Dish Towel"=> {img_url: "towel.svg", price: 5.99}, "Sticker"=> {img_url: "sticker.svg", price: 4.99}, "Magnet"=> {img_url: "magnet.svg", price: 6.99}}
 
 
   validates :product_type, inclusion: {in: PRODUCTS}

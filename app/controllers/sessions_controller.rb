@@ -46,12 +46,13 @@ class SessionsController < ApplicationController
 
   def show_cart
     @trinket_ids = session[:cart] 
+    
 
     if !@trinket_ids 
       @empty = true
     else 
       @trinkets = @trinket_ids.map {|id| Trinket.find(id)}
-
+      @madlibs = @trinkets.map(&:madlib)
     end
     
   end

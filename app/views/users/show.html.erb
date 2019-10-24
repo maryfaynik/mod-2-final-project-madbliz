@@ -1,7 +1,7 @@
 <h1>Welcome to <%= this_user? ? 'your' : "#{@user.to_name}'s" %> profile page, <%= current_user.first_name %>!</h1>
 <hr>
 
-<h4><%= this_user? ? "Your" : "#{@user.first_name}'s" %> favorites: </h4>
+<h3><%= this_user? ? "Your" : "#{@user.first_name}'s" %> favorites: </h3>
 <% if @madlibs.empty? %>
   <h5>No favorites yet! Get to work! </h5>
 <% else%>
@@ -10,24 +10,28 @@
     <li><%= link_to madlib.title, madlib_path(madlib) %></li>
   <% end %>
   </ul>
+
+  <%= button_to "See All Favorites", user_favorites_path(current_user), method: :get %>
+  <br>
 <%end%>
 
 
 <% if this_user?%>
-<h4> Your recent orders: </h4>
+  <h3> Your recent orders: </h3>
+
   <%if @orders.empty? %>
     <h5>No orders yet! Buy some stuff! </h5>
-  <% else%>
+  <%else%>
     <ol>
     <% #@trinket_orders.each_with_index do |t_o, index| %>
     <% @orders.each do |order| %>
       <li>#<%= link_to order.number , order_path(order) %></li>
         <ul>
           <% order.trinkets.each do |trinket| %>
-          
             <li><%= trinket.product_type%> with <%= trinket.madlib.title%> </li>
           <%end%>
         </ul>
+    
     <% end %>
     </ol>
 
