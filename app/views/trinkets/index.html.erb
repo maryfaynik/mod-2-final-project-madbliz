@@ -1,10 +1,15 @@
 shows all trinkets sorted by user
 
 <%# All of the trinkets created* by the user %>
-<% @trinkets.each do |trinket| %>
+<div class="d-flex justify-content-around align-items-center flex-wrap">
+<% @trinkets.each.with_index do |trinket, i| %>
+<figure class="figure d-flex flex-column justify-content-start">
   <%= link_to trinket_path(trinket) do %>
-    <%= image_tag "#{@trinket_types[trinket.product_type][:img_url]}", class: 'img-thumbnail', alt: "#{trinket.product_type}" %>
-  <% end %>
+    <%= image_tag "#{@trinket_types[trinket.product_type][:img_url]}", class: 'figure-img img-thumbnail rounded', alt: "#{trinket.product_type}" %>
+  <% end %><br>
+  <span class="figure-caption text-center"><%= @madlibs[i].title %></span>
+  </figure>
 <% end %>
+</figure>
 <%# List out the trinkets %>
 <%# Thumbnail - Link to the trinket show page %>

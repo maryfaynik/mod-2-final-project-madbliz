@@ -2,25 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .img-thumbnail {
-  width: 200px;
+  min-height: 200px;
+  min-width: 200px;
 }
 /* flex container for trinkets */
 .img-wrapper {
-  height: 50%;
-  width: 50%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  // position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
 /* All flex items */
-.img-wrapper > * {
-  flex: 1 1 100%
+.img-wrapper:first-child {
+  // flex: 1 1 100%;
+  width: 100%;
+  height: 50vh;
 }
 /* Text container */
 .img-wrapper span {
   display: block;
-  position: absolute;
+  position: relative;
   max-width: 50%;
-  text-align: justfy;
+  text-align: justify;
+  left: 25%;
+  bottom: 200%;
+  font-size: 1rem;
+  font-family: cursive;
+  font-weight: bold;
+  color: forestgreen;
+}
+
+.Mug + span {
+  left: 10%;
+  bottom: 250%;
+}
+
+.Dish + span {
+  bottom: 230%;
+  left: 20%;
+  width: 40%;
+}
+.Sticker + span {
+  bottom: 240%;
+  left: 20%;
+}
+.Magnet + span {
+  width: 45%;
+  left: 28%;
+  bottom: 240%;
 }
