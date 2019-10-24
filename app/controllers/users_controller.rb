@@ -15,14 +15,9 @@ class UsersController < ApplicationController
         @madlibs= @user.madlibs
 
         @trinkets = @user.trinkets
-
-        #these are all of the user's trinket_orders with placed status
-        #@trinket_orders = @user.trinket_orders.select {|t_order| Order.find(t_order.order_id).placed == true}
         
         @orders = @user.orders.select {|order| order.placed == true}.last(3).reverse
     
-        #these are the orders associated with placed trinket orders 
-       # @orders = @trinket_orders.map {|t_o| Order.find(t_o.order_id)}.uniq
 
     end
 
