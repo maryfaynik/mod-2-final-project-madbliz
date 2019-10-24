@@ -1,13 +1,16 @@
 <h1><%=@madlib.title%></h1>
 
 <p>
-<%=@madlib.body%>
+<%@sentences.each_with_index do |sentence, index|%>
+    <%= sentence.value %> <span style="font-family: 'Permanent Marker', cursive;"> <%= @blanks[index].input unless !@blanks[index]%></span>
+<%end%>
 </p>
 
 <%unless @is_favorite %>
     <%= button_to "Add To Your Favorites", new_favorite_path, params: { id: @madlib.id }%>
 <%else %>
-    <%= button_to "Remove From Favorites", delete_favorite_path, params: { id: @madlib.id }%>
+    <%# button_to "Remove From Favorites", delete_favorite_path(@favorite.id), params: { id: @madlib.id }%>
+    <%= button_to "Remove From Favorites", {action: "destroy", controller: "favorites", id: @is_favorite.id}, method: :delete %>
     <%= button_to "Buy Something!", madlib_new_cart_path(@madlib.id), method: :get %>
 
 <%end %>

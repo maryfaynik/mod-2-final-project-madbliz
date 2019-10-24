@@ -12,6 +12,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Gloria+Hallelujah|Permanent+Marker|Reenie+Beanie|Rock+Salt|Schoolbell&display=swap" rel="stylesheet">
+
+    <!-- 
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Permanent Marker', cursive;
+    font-family: 'Caveat', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Schoolbell', cursive;
+    font-family: 'Rock Salt', cursive;
+    font-family: 'Reenie Beanie', cursive;
+    -->
+
   </head>
 
   <body>
@@ -39,31 +52,34 @@
 
       </nav>
 
-      <div class="user_controls">
-        <% if logged_in? %> 
-          <div> Logged in as <%=current_user.user_name%> </div>
-          <%=button_to 'Logout', logout_path %>
+      <div class="user_controls navbar navbar-light bg-light">
+  
+        <% if logged_in? %>
+          <span class="nav-item"> Logged in as <%=current_user.user_name%></span>
+          <div class="nav-item"> <%= button_to 'Logout', logout_path %> </div>
         <%else%>
-          <div id='login'> <%= button_to 'Login', login_path, method: :get %></div>
+          <div class="nav-item"><%= link_to 'Login', login_path, class: "nav-link" %> </div>
         <%end%>
-      </div>
-        
-      
+     
+      </div> <%# END OF USER CONTROLS%>
 
-      <div class="errors">
-        <% if flash[:errors] %>
-          <% flash[:errors].each do |error|%>
-              <strong><%= error %></strong>
-          <% end %>
-        <% end %>
-      </div>
     </header>
 
-    
+    <%# ERRORS %>
+      <div class="errors">
+          <% if flash[:errors] %>
+            <% flash[:errors].each do |error|%>
+                <strong><%= error %></strong>
+            <% end %>
+          <% end %>
+      </div>
+
+
     <main>
-    <div>
-    <%= yield %>
-    </div>
+    
+      <%#PAGE CONTENT%>
+      <div>
+        <%= yield %>
     </main>
 
   </body>

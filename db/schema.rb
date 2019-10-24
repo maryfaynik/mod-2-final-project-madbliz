@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_144014) do
+ActiveRecord::Schema.define(version: 2019_10_24_175533) do
 
   create_table "blanks", force: :cascade do |t|
     t.string "speech_part"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2019_10_21_144014) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "sentences", force: :cascade do |t|
+    t.string "value"
+    t.integer "madlib_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["madlib_id"], name: "index_sentences_on_madlib_id"
+  end
+
   create_table "trinket_orders", force: :cascade do |t|
     t.integer "order_id", null: false
     t.integer "trinket_id", null: false
@@ -77,7 +85,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_144014) do
   add_foreign_key "favorites", "madlibs"
   add_foreign_key "favorites", "users"
   add_foreign_key "orders", "users"
+  add_foreign_key "sentences", "madlibs"
   add_foreign_key "trinket_orders", "orders"
   add_foreign_key "trinket_orders", "trinkets"
-  add_foreign_key "trinkets", "favorites"
 end
