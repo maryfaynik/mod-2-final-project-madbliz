@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
     
     def current_user
-        @cuser = (User.find_by(id: session[:user_id]) || User.new)
+        @cuser ||= (User.find_by(id: session[:user_id]) || User.new)
     end
     helper_method :current_user
 
