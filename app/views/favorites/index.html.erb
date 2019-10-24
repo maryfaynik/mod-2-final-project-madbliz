@@ -1,5 +1,7 @@
 <h1>  Your Favorites! </h1>
 
+<%= @favorites.empty? ? (link_to "Start making some madlibs you'll love!", new_madlib_path) : nil %>
+
 <ul>
 <% @favorites.each do |favorite|%>
     <% madlib = Madlib.find(favorite.madlib_id)%>
