@@ -19,6 +19,77 @@
 @import "bootstrap";
 
 
+/* RGB */
+$black: rgba(0, 5, 1, 1);
+$iguana: rgba(115, 171, 132, 1);
+$etongreen: rgba(153, 209, 156, 1);
+$pearlaqua: rgba(121, 199, 197, 1);
+$powder: rgba(173, 225, 229, 1);
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+
+}
+
+
 nav {
+    flex-basis: 80%;
+}
+
+
+
+.user_controls {
+    // container stuff
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#f8f9fa;
+  
+
+    // item stuff
+    flex-basis: 20%;
     
 }
+
+#login{
+    padding-left: 20%;
+}
+
+.user_control:first-child{
+    flex-basis: 70%;
+    flex-grow: 1;
+    
+}
+
+.user_control > *{
+    flex-basis: 30%;
+    flex-grow: 2;
+    
+}
+
+
+
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $etongreen;
+    align-content: center;
+    justify-content: space-evenly
+}
+
+
+
+main>* {
+
+    width: 70%;
+    background-color: rgba(239, 252, 251, 0.897); 
+    
+    
+}
+
+.login_form {
+    
+};

@@ -16,12 +16,17 @@
 
   <body>
     <header>
+      
+      <%#NAVBAR%> 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <%# The 'brand' bit %>
         <%= link_to 'MADLIBZ', root_path, class: "nav-brand" %>
-        
+
+        <%#collapse plugin and other navigation toggling behaviours%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> 
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -29,16 +34,21 @@
             <li class="nav-item"><%= link_to 'Profile', user_path(current_user), class: "nav-link" unless !logged_in? %></li>
             <li class="nav-item"><%= link_to 'Create!', new_madlib_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to 'Cart', cart_path, class: "nav-link" %></li>
-            <% if logged_in? %> 
-              <li class="nav-item">Logged in as <%=current_user.user_name%> <%=button_to 'Logout', logout_path %> </li>
-            <%else%>
-              <li class="nav-item"> <%= button_to 'Login', login_path, method: :get %></li>
-            <%end%>
           </ul>
-        </div>
-      </nav>
-        
+        </div> <%# END COLLAPSE%>
 
+      </nav>
+
+      <div class="user_controls">
+        <% if logged_in? %> 
+          <div> Logged in as <%=current_user.user_name%> </div>
+          <%=button_to 'Logout', logout_path %>
+        <%else%>
+          <div id='login'> <%= button_to 'Login', login_path, method: :get %></div>
+        <%end%>
+      </div>
+        
+      
 
       <div class="errors">
         <% if flash[:errors] %>
@@ -48,6 +58,13 @@
         <% end %>
       </div>
     </header>
+
+    
+    <main>
+    <div>
     <%= yield %>
+    </div>
+    </main>
+
   </body>
 </html>

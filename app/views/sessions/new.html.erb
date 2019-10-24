@@ -1,12 +1,22 @@
-<%= form_tag '/login' %>
+<%= form_tag '/login', {class:'login_form'} do %>
 <%# User login %>
-<%= text_field_tag 'user[username]', nil, {placeholder: "Username"} %><br>
+<div class="form-group">
+    <%= label_tag "Username"%>
+    <%= text_field_tag 'user[username]', nil, {placeholder: "Enter username", class:"form-control"}%><br>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+</div>
 <%# User password %>
-<%= password_field_tag 'user[password]', nil, {placeholder: "Password"} %><br>
+<div class="form-group">
+    <%= label_tag "Password"%>
+    <%= password_field_tag 'user[password]', nil, {placeholder: "Password", class: "form-control"} %><br>
+</div>
+<%# Submit %>
+<%= submit_tag 'Login', class:"btn btn-primary" %><br>
 <%#  %>
-<%= submit_tag 'Login' %><br>
-<%#  %>
+<%end%>
 
+<br>
 OR
-
+<br>
 <%= link_to "create a new account!", new_user_path %>
+
