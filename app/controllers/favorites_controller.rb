@@ -19,11 +19,21 @@ class FavoritesController < ApplicationController
 
     def index
         @favorites = current_user.favorites
-
     end
 
     def destroy
+        favorite = Favorite.find(params[:id])
+        flash[:errors] ||= []
+        flash[:errors] << "You've bought something from this favorite!"
+        return redirect_to user_favorites_path(current_user) unless favorite.trinkets.empty?
+        flash[:errors] = nil
         Favorite.destroy(params[:id])
         redirect_to user_path(current_user)
+    end
+
+    private
+
+    def has_trinket?
+        !!trinkets
     end
 end
