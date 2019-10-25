@@ -35,7 +35,7 @@ class SessionsController < ApplicationController
   end
 
   def add_to_cart
-    trinket_ids = params[:trinket_ids]
+    trinket_ids = params[:trinket_ids] || []
   
     session[:cart] ||= []
     trinket_ids.each do |trinket_id|
