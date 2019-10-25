@@ -1,8 +1,7 @@
 class FavoritesController < ApplicationController
-
     def create
         #IF NOT LOGGED IN, REDIRECT TO LOGIN PAGE
-        if ! session[:user_id]
+        if !session[:user_id]
             session[:current_fave] = Madlib.find(params[:id].to_i)
 
             #sets return_to to where I am (this specfic madlib)

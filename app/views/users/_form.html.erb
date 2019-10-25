@@ -9,13 +9,13 @@
   <% if !@user.user_name%>
     <%= f.label "Select a unique username" %>
     <%= f.text_field :user_name %><br>
-  <%end%>
   <%# password %>
-  <%= f.label 'Enter your password' %>
-  <%= f.password_field :password %><br>
-  <%# confirm password %>
-  <%= f.label 'Confirm your password' %>
-  <%= f.password_field :password_confirmation %><br>
+    <%= f.label 'Enter your password' %>
+    <%= f.password_field :password %><br>
+    <%# confirm password %>
+    <%= f.label 'Confirm your password' %>
+    <%= f.password_field :password_confirmation %><br>
+  <%end%>
   <%# submit %>
   <%= f.submit %>
 <% end %>

@@ -64,13 +64,15 @@
     </header>
 
     <%# ERRORS %>
-          <% if flash[:errors] %>
-           <div class="errors alert alert-danger" role="alert">
-            <% flash[:errors].each do |error|%>
-                <strong><%= error %></strong>
-            <% end %>
-             </div>
+    <% if !!flash[:errors] %>
+      <% if !flash[:errors].empty? %>
+        <div class="errors alert alert-danger" role="alert">
+          <% flash[:errors].each do |error|%>
+            <strong><%= error %></strong>
           <% end %>
+        </div>
+      <% end %>
+    <% end %>
 
 
     <main>
