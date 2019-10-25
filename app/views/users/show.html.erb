@@ -12,12 +12,9 @@
         <td><%= link_to madlib.title, madlib_path(madlib) %></td>
       </tr>
     <% end %>
-    <tr>
-        <td><%= button_to "See All Favorites", user_favorites_path(current_user), method: :get %></td>
-      </tr>
   </table>
-
-  
+  <br>
+  <%= button_to "See All Favorites", user_favorites_path(current_user), method: :get %>
   <br>
 <%end%>
 

@@ -3,7 +3,7 @@
         {
             "title": "Hello ____!",
             "blanks": ["noun"],
-            "value": ["Hello,", 0]
+            "value": ["Hello,"]
         },
         {
             "title": "How To Cross a Piranha-Infested River",
@@ -11,9 +11,9 @@
                         "verb ending in 'ing'", "verb", "verb ending in 'ing'",
                         "adverb", "adjective", "a place", "type of liquid", "part of the body", "verb"],
             "value": ["If you are traveling in ", " and find yourself having to cross a piranha-filled river, here's how to do it ",
-                        ": \n* Piranhas are more ", " during the day, so cross the river at night.\n* Avoid areas with netted ",
-                        " traps--piranhas may be ", " there looking to ", " them!\n* When "," the river, swim ",
-                        ". You don't want to wake them up and make them ", "!\n* Whatever you do, if you have an open wound, try to find another way to get back to the ",
+                        ": <br \>* Piranhas are more ", " during the day, so cross the river at night.<br \>* Avoid areas with netted ",
+                        " traps--piranhas may be ", " there looking to ", " them!<br \>* When "," the river, swim ",
+                        ". You don't want to wake them up and make them ", "!<br \>* Whatever you do, if you have an open wound, try to find another way to get back to the ",
                         ". Piranhas are attracted to fresh ", " and will most likely take a bite out of your ", " if you ", " in the water!"]
         },
         {
@@ -48,6 +48,90 @@
                         " contact, don't admit it. No hugs or ", ". Just shake his/her ", " firmly. And remember, when he/she asks you out, even though a chill may run down your ",
                         " and you can't stop your ", " from ", ", just play it ", ". Take a long pause before answering in a very ", " voice. \"I'll have to ", 
                         " it over.\""]
+        },
+
+        {
+            "title": "My Dream Man",
+            "blanks": ["adjective", "adjective", "celebrity", "celebrity", "animal", "verb", "noun", "noun", "part of the body",  "adverb",
+                        "adjective", "adverb", "adjective", "adjective", "part of the body", "adjective", "noun", "noun", "person in the room (male)"],
+            "value": ["My \"Dream Man\" should, first of all be very  ", " and  ", ". He should have a physique like  ", ", a profile like  ",
+                ", and the intelligence of a/an  ", ". He must be polite and must always remember to  ", " my  ", ", to tip his  ",
+                 " and to take my  ", " when crossing the street. He should move  ", ", have a/an  ", " voice, and should always dress  ",
+                  ". I would also like him to be a/an  ", " dancer, and when we are alone he should whisper  ", " nothings into my  ",
+                   " and hold my  ", "  ", ". I know a/an  ", " is hard to find. In fact the only one I can think of is  ", ""]
+        },
+
+        {
+            "title": "The Walmart Difference",
+            "blanks": ["verb", "adjective", "plural noun", "adjective", "verb ending in -ing", "verb",
+                        "number", "adjective", "plural noun", "plural noun", "plural noun", "relative (plural)",
+                        "adjective", "adjective", "plural noun"],
+            "value": ["Come ", " at WALMART, where you`ll receive ", " discounts on all of your favorite brand name ",
+                    ". Our ", " and ", " associates are there to ", " you ", " hours a day. Here you will find ",
+                    " prices on the ", " you need. ", " for the moms, ", " for the kids and all the latest electronics for the ",
+                    ". So come on down to your ", " ", " WALMART where the ", " come first."]
+        },
+
+        {
+            "title": "Personal Ad",
+            "blanks": ["adjective", "verb ending in -ing", "plural noun", "type of liquid", "plural noun", "celebrity", "place",
+                        "occupation", "noun", "nationality", "female celebrity", "noun", "female friend", "plural noun", "number", "adjective"],
+            "value": ["I enjoy long, ", " walks on the beach, getting ", " in the rain and serendipitous encounters with ", 
+                ". I really like piña coladas mixed with ", ", and romantic, candle-lit ", ". I am well-read from Dr. Seuss to ",
+                    ". I travel frequently, especially to ", ", when I am not busy with work. (I am a ", ".) I am looking for ",
+                    " and beauty in the form of a ", " goddess. She should have the physique of ", " and the ", " of ",
+                    ". I would prefer if she knew how to cook, clean, and wash my ",
+                    ". I know I’m not very attractive in my picture, but it was taken ",
+                    " days ago, and I have since become more ", "."]
+        },
+
+        {
+            "title": "Greetings, Earthlings!",
+            "blanks": ["plural noun", "occupation", "animal (plural)", "place", "verb", "noun"],
+            "value": ["In the book War of the ", ", the main character is an anonymous ", 
+                " who records the arrival of ", " in ", ". Needless to say, havoc reigns as the ",
+                 " continue to ", " everything in sight, until they are killed by the common ", "."]
+        },
+        {
+            "title": "There Was an Old Woman",
+            "blanks": ["adjective", "noun", "plural noun", "noun", "verb ending in 'ed'"],
+            "value": ["There was an ", " woman who lived in a/an ", ".She had so many ", 
+                " she didn`t know what to do. She gave them some broth without any ", ". She ",
+                 " them all soundly and put them to bed."]
+        },
+        {
+            "title": "YanKee Doodle",
+            "blanks": ["noun", "verb ending in 'ing'", "animal", "article of clothing", "plural noun", "adjective", "noun", "plural noun"],
+            "value": ["Yankee Doodle went to ", ", a-", " on a ", "; Stuck a feather in his ", " and called it ", 
+                ". Yankee Doodle keep it up, Yankee Doodle ", ", Mind the ", " and the step and with the ", " be handy."]
+        },
+        {
+            "title": "Jack and Jill",
+            "blanks": ["noun", "verb", "type of liquid", "verb ending in 'ed'", "noun", "verb ending in 'ing'", 
+                "verb", "adjective", "noun", "adjective"],
+            "value": ["Jack and Jill went up the ", ", To ", " a pail of ", "; Jack ",
+                 " down, and broke his ", ", And Jill came ", " after. Then up Jack got and off did ", ", As ",
+                  " as he could caper, To old Dame Dob, who patched his ", " with ", " and ", " paper."]
+        },
+        {
+            "title": "Movie Quotes",
+            "blanks": ["verb", "verb ending in -ing", "noun", "adjective", "occupation", "animal", "adjective",
+                    "verb ending in -ing", "noun"],
+            "value": ["\"My name is ", "; learn it well, for it`s the ", " sound of your ", ".\"...\"I told Killian I`d be ",
+             ". I wouldn`t want to be a/an ", ".\"...\"I`m a cybernetic ", ": living tissue over a/an ", 
+             " endoskeleton.\"...\"If things have gone wrong, I`m ", " myself, and you`ve got a wet ", 
+             " wrapped around your head.\"... ...- Arnold Schwarzenegger"]
+        },
+        {
+            "title": "How to Make a PB&J",
+            "blanks": ["color", "noun", "food", "adjective", "adjective", "number", "noun", "verb", "verb", "noun"],
+            "value": ["1. Select the type of bread you want to use. Many prefer the taste of ",
+                 " bread, while others prefer ", 
+                 " bread because it is healthy.<br>2. Choose the flavor of Jam/Jelly. I personally prefer ", 
+                 " jam, but you can use whatever you want.<br>3. Choose the type of penut butter - either ", 
+                 " or ", ". 4. Take out ", " slice(s) of bread. 5. Use a ", " to ",
+                  " the jam all over on of the pieces of bread. 6. Now ",
+                   " the penut butter on the other piece of bread. 7. Put them together, and you have a PB&J ", "."]
         }
     ]
 }
