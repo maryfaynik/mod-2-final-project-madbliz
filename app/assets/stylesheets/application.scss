@@ -139,3 +139,8 @@ span {
 p {
     font-family: 'Schoolbell', cursive;
 }
+
+// Getting rid of the default alert margin addition by specifying the div
+div.alert {
+    margin-bottom: 0rem; 
+}

@@ -66,13 +66,13 @@
     </header>
 
     <%# ERRORS %>
-      <div class="errors">
           <% if flash[:errors] %>
+           <div class="errors alert alert-danger" role="alert">
             <% flash[:errors].each do |error|%>
                 <strong><%= error %></strong>
             <% end %>
+             </div>
           <% end %>
-      </div>
 
 
     <main>
@@ -80,6 +80,7 @@
       <%#PAGE CONTENT%>
       <div>
         <%= yield %>
+      </div>
     </main>
 
   </body>
