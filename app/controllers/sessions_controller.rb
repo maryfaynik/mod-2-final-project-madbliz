@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
         # This accounts for anywhere the user has been redirected from
         # where they needed to login or create a username
         session[:redirect_to] ||= user_path(@user)
+        session[:errors] &&= nil
         redirect_to session.delete(:redirect_to)
       end
   end
