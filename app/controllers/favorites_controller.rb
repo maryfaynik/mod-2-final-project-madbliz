@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
 
     def index
         @favorites = current_user.favorites
-
+        @madlibs = @favorites.map {|favorite| favorite.madlib}
     end
 
     def destroy

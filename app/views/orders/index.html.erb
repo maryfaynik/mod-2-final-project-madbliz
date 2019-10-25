@@ -1,10 +1,13 @@
 <h1>Hi, <%= current_user.to_name %></h1>
+<hr class="top">
 
 <h2>Here are all of your past Orders:</h2>
-<ul>
+
+<table>
 <% @orders.each do |order|  %>
-    <li>Order Number <%=link_to order.number, order_path(order)%>  </li>
-   
+    <tr>
+        <td>Order #<%=link_to order.number, order_path(order)%>  </tr>
+    </tr>
 <%end%>
-</ul>
+</table>
 

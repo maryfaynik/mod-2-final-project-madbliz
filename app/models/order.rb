@@ -7,5 +7,10 @@ class Order < ApplicationRecord
   def number
     self.created_at.to_i + self.id 
   end
+
+  def subtotal
+    self.trinkets.inject(0) {|sum, trinket| trinket.price + sum}.round(2)
+  end
+
 end
 

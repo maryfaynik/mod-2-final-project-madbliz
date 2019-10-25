@@ -1,10 +1,10 @@
 <h1>  Your Favorites! </h1>
 
-<ul>
-<% @favorites.each do |favorite|%>
-    <% madlib = Madlib.find(favorite.madlib_id)%>
-    <li> <%=link_to madlib.title, madlib_path(madlib) %> 
-        <%= button_to "Un-Favorite", {action: "destroy", id: favorite.id}, method: :delete %>
-    </li>
+<table>
+<% @favorites.each_with_index do |favorite, index|%>
+    <tr>
+        <td> <%=link_to @madlibs[index].title, madlib_path(@madlibs[index]) %> </td> 
+        <td> <%= button_to "Un-Favorite", {action: "destroy", id: favorite.id}, method: :delete %> </td>
+    <tr>
 <%end%>
-</ul>
+</table>

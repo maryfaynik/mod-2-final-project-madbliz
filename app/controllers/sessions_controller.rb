@@ -53,6 +53,8 @@ class SessionsController < ApplicationController
     else 
       @trinkets = @trinket_ids.map {|id| Trinket.find(id)}
       @madlibs = @trinkets.map(&:madlib)
+      @subtotal = @trinkets.inject(0) {|sum, trinket| trinket.price + sum}.round(2)
+  
     end
     
   end
