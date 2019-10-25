@@ -1,13 +1,32 @@
 <h1>View Your Order:</h1>
+<hr class="top">
 
 <h3>Placed: <%= @order.created_at.strftime("%m/%d/%y") %></h3>
 <h3>Items:</h3>
-<ul>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Madlib</th>
+        <th>Price</th>
+    </tr>
     <% @trinkets.each do |trinket|%>
-        <li><strong> <%=link_to trinket.product_type, trinket_path(trinket)%> </strong></li>
-        <p>Price: $<%=trinket.price %></p>
-        <p>Madlib: <%=trinket.madlib.title%> </p>
-        
+        <tr>
+            <td><strong> <%=link_to trinket.product_type, trinket_path(trinket)%> </strong></td>
+            <td><%=trinket.madlib.title%> </td>
+            <td>$<%=trinket.price %></td>
+        </tr>
     <%end%>
-</ul>
+        <tr>
+            <td> -- </td>
+            <td> -- </td>
+            <td> -- </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Subtotal</td>
+            <td> $<%= @order.subtotal%></td>
+        </tr>
+</table>
+
 <%= link_to "Continue to Profile", user_path(current_user) %>
+

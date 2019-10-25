@@ -1,14 +1,36 @@
 <h1> 🛒 Your Cart 🛒 </h1>
+<hr class="top">
 
 <% if @empty%>
     <h3>Your Cart is Empty. Get shopping!</h3>
 <%else%>
-    <ul>
+    <br>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Madlib</th>
+            <th>Price</th>
+        </tr>
     <% @trinkets.each_with_index do |trinket, index|%>
-        <li> <%=trinket.prod_and_price %></li> 
-        <p> "<%= @madlibs[index].title %>"</p>
+        <tr>
+            <td> <%=trinket.product_type %></td> 
+            <td> "<%= @madlibs[index].title %>"</td>
+            <td> $<%= trinket.price %></td>
+        <tr>
     <%end%>
-    </ul>
 
+     <tr>
+            <td> -- </td>
+            <td> -- </td>
+            <td> -- </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Subtotal</td>
+            <td> $<%= @subtotal%></td>
+        </tr>
+    </table>
+
+    <br>
     <%= button_to "Place Order", orders_path, params: {trinket_ids: @trinket_ids}%>
 <%end%>

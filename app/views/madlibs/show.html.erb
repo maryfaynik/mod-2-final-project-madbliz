@@ -1,4 +1,5 @@
 <h1><%=@madlib.title%></h1>
+<hr class="body">
 
 <p>
 <%@sentences.each_with_index do |sentence, index|%>
@@ -9,7 +10,6 @@
 <%unless @is_favorite %>
     <%= button_to "Add To Your Favorites", new_favorite_path, params: { id: @madlib.id }%>
 <%else %>
-    <%# button_to "Remove From Favorites", delete_favorite_path(@favorite.id), params: { id: @madlib.id }%>
     <%= button_to "Remove From Favorites", {action: "destroy", controller: "favorites", id: @is_favorite.id}, method: :delete %>
     <%= button_to "Buy Something!", madlib_new_cart_path(@madlib.id), method: :get %>
 
