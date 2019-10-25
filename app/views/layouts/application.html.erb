@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MADLIB</title>
+    <title>Library of Madness</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -33,7 +33,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <%# The 'brand' bit %>
-        <%= link_to 'MADLIBZ', root_path, class: "nav-brand" %>
+        <%= link_to 'MADNESS', root_path, class: "nav-brand" %>
 
         <%#collapse plugin and other navigation toggling behaviours%>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,7 +42,6 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><%= link_to 'Home', root_path, class: "nav-link" %> </li>
             <li class="nav-item"><%= link_to 'Profile', user_path(current_user), class: "nav-link" unless !logged_in? %></li>
             <li class="nav-item"><%= link_to 'Create!', new_madlib_path, class: "nav-link" %></li>
             <li class="nav-item"><%= link_to 'Cart', cart_path, class: "nav-link" %></li>
