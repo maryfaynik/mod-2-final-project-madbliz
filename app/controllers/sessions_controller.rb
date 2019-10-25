@@ -36,19 +36,20 @@ class SessionsController < ApplicationController
 
   def add_to_cart
     trinket_ids = params[:trinket_ids]
-  
+    
     session[:cart] ||= []
     trinket_ids.each do |trinket_id|
       session[:cart] << trinket_id
     end
 
+    
     redirect_to cart_path
   end
 
   def show_cart
     @trinket_ids = session[:cart] 
     
-
+  
     if !@trinket_ids 
       @empty = true
     else 
@@ -57,6 +58,7 @@ class SessionsController < ApplicationController
       @subtotal = @trinkets.inject(0) {|sum, trinket| trinket.price + sum}.round(2)
   
     end
+    
     
   end
 

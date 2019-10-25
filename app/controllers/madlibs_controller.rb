@@ -10,7 +10,10 @@ class MadlibsController < ApplicationController
      
         @madlib = Madlib.new
 
+        @title = @template["title"]
         @blanks = @template["blanks"]
+
+        
        
     end
 
