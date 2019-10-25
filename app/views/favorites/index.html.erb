@@ -1,10 +1,14 @@
 <h1>  Your Favorites! </h1>
 
+
+<%= @favorites.empty? ? (link_to "Start making some madlibs you'll love!", new_madlib_path) : nil %>
+                   
 <table>
 <% @favorites.each_with_index do |favorite, index|%>
     <tr>
         <td> <%=link_to @madlibs[index].title, madlib_path(@madlibs[index]) %> </td> 
         <td> <%= button_to "Un-Favorite", {action: "destroy", id: favorite.id}, method: :delete %> </td>
     <tr>
+ 
 <%end%>
 </table>

@@ -185,6 +185,11 @@ p {
 }
 
 
+// Getting rid of the default alert margin addition by specifying the div
+div.alert {
+    margin-bottom: 0rem; 
+}
+
 table {
     width: 50%;
     font-family: 'Schoolbell', cursive;
