@@ -30,19 +30,6 @@
     <h5>No orders yet! Buy some stuff! </h5>
   <%else%>
 
-    <ol>
-    <% #@trinket_orders.each_with_index do |t_o, index| %>
-    <% @orders.each do |order| %>
-      <li>#<%= link_to order.number , order_path(order) %></li>
-        <ul>
-          <% order.trinkets.each do |trinket| %>
-            <li><%= trinket.product_type%> <%= "with #{trinket.madlib.title}" unless trinket.favorite.nil?%> </li>
-          <%end%>
-        </ul>
-    
-    <% end %>
-    </ol>
-
     <table>
       <% @orders.each do |order| %>
         <tr>
