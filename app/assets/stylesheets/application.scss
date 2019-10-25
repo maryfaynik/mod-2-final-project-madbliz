@@ -37,7 +37,9 @@ header{
 
 nav {
     flex-basis: 75%;
+    background-color: #eff1e9;
 }
+
 
 
 
@@ -45,7 +47,7 @@ nav {
     // container stuff
     display: flex;
     justify-content: space-around;
-    background-color:#f8f9fa;
+    background-color: #eff1e9;
     align-items: center;
 
     // item stuff
@@ -85,7 +87,7 @@ main{
 main>* {
 
     width: 70%;
-    background-color: white; 
+    background-color: #fdf6e3;
     min-height: 100vh;
     padding-left: 25px;
     padding-right: 25px;
@@ -224,6 +226,15 @@ td.maxi {
     padding-left: 5px;
 }
 
+td.left {
+    text-align: right;
+    padding-left: 5px;
+}
+td.right {
+    text-align: left;
+    padding-left: 5px;
+}
+
 th {
     font-weight: bold;
 }
@@ -244,8 +255,8 @@ div.splash {
 div#splash-title{
     position: absolute;
     z-index: 1;
-    top: 200px;
-    left: 400px;
+    top: 350px;
+    left: 430px;
     
 }
 

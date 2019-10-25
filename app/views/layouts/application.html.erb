@@ -30,7 +30,7 @@
     <header>
       
       <%#NAVBAR%> 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
 
         <%# The 'brand' bit %>
         <%= link_to 'MADNESS', root_path, class: "nav-brand" %>
@@ -50,7 +50,7 @@
 
       </nav>
 
-      <div class="user_controls navbar navbar-light bg-light">
+      <div class="user_controls navbar navbar-light">
   
         <% if logged_in? %>
           <span class="nav-item"> Logged in as <%=current_user.user_name%></span>
